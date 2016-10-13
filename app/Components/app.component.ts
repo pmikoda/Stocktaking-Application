@@ -1,6 +1,8 @@
-import {Component} from 'angular2/core';
-import {CoursesComponent} from './courses.component';
-import {AuthorsComponent} from './authors.component';
+import { Component } from 'angular2/core';
+import { CoursesComponent } from './courses.component';
+import { AuthorsComponent } from './authors.component';
+import { ContactFormComponent } from './contact-form-component'
+import { SignUpFormComponent } from './signup-form.component'
 
 @Component({
     selector: 'my-app',
@@ -11,9 +13,11 @@ import {AuthorsComponent} from './authors.component';
                 </button>
                 <courses></courses>
                 <authors></authors>
+                <contact-form></contact-form>
+                <signup-form></signup-form>
             `,
-    directives: [CoursesComponent, AuthorsComponent]
+    directives: [CoursesComponent, AuthorsComponent, ContactFormComponent, SignUpFormComponent]
 })
-export class AppComponent { 
+export class AppComponent {
 
 }
