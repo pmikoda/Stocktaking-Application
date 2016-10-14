@@ -8,11 +8,17 @@ import { UsernameValidators } from '../Validators/usernameValidators';
 })
 export class SignUpFormComponent {
     form = new ControlGroup({
-        username: new Control('', Validators.required),
+        username: new Control('', Validators.compose([Validators.required, UsernameValidators.cannotContainSpace]),
+                             UsernameValidators.shouldBeUnique),
         password: new Control('', Validators.required)
     });
 
     signup() {
+        // var result = authService.login(this.form.value);
+        this.form.find('username').setErrors({
+            invalidLogin: true
+        });
+
         console.log(this.form.value);
     }
 }

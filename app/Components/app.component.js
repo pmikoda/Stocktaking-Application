@@ -1,4 +1,4 @@
-System.register(['angular2/core', './courses.component', './authors.component', './contact-form-component', './signup-form.component'], function(exports_1, context_1) {
+System.register(['angular2/core', './courses.component', './authors.component', './contact-form-component', './signup-form.component', 'rxjs/Rx'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/core', './courses.component', './authors.component', 
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, courses_component_1, authors_component_1, contact_form_component_1, signup_form_component_1;
+    var core_1, courses_component_1, authors_component_1, contact_form_component_1, signup_form_component_1, Rx_1;
     var AppComponent;
     return {
         setters:[
@@ -28,15 +28,23 @@ System.register(['angular2/core', './courses.component', './authors.component', 
             },
             function (signup_form_component_1_1) {
                 signup_form_component_1 = signup_form_component_1_1;
+            },
+            function (Rx_1_1) {
+                Rx_1 = Rx_1_1;
             }],
         execute: function() {
             AppComponent = (function () {
                 function AppComponent() {
+                    var keyups = Rx_1.Observable.fromEvent($("#search"), "keyup")
+                        .map(function (e) { return e.target.value; })
+                        .filter(function (text) { return text.length >= 3; })
+                        .debounceTime(400);
+                    keyups.subscribe(function (data) { return console.log(data); });
                 }
                 AppComponent = __decorate([
                     core_1.Component({
                         selector: 'my-app',
-                        template: "\n                <h1>Stocktaking Application</h1>\n                <button type=\"button\"\n                    class=\"btn btn-primary\">Submit\n                </button>\n                <courses></courses>\n                <authors></authors>\n                <contact-form></contact-form>\n                <signup-form></signup-form>\n            ",
+                        template: "\n                <h1>Stocktaking Application</h1>\n                <button type=\"button\"\n                    class=\"btn btn-primary\">Submit\n                </button>\n                <courses></courses>\n                <authors></authors>\n                <contact-form></contact-form>\n                <signup-form></signup-form>\n                <input id=\"search\" type=\"text\" class=\"form-control\" placeholder=\"Search\">\n            ",
                         directives: [courses_component_1.CoursesComponent, authors_component_1.AuthorsComponent, contact_form_component_1.ContactFormComponent, signup_form_component_1.SignUpFormComponent]
                     }), 
                     __metadata('design:paramtypes', [])

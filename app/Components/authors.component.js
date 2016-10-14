@@ -29,7 +29,7 @@ System.register(['angular2/core', '../Services/authors.service'], function(expor
                 AuthorsComponent = __decorate([
                     core_1.Component({
                         selector: 'authors',
-                        template: "\n        <h2>Authors</h2>\n        {{title}}\n        <ul>\n            <li *ngFor=\"#author of authors\" >\n                {{ author }}\n            </li>\n        </ul>\n        ",
+                        template: "\n        <h2>Authors</h2>\n        {{title}}\n        <ul>\n            <li *ngFor=\"let author of authors\" >\n                {{ author }}\n            </li>\n        </ul>\n        ",
                         providers: [authors_service_1.AuthorsService]
                     }), 
                     __metadata('design:paramtypes', [authors_service_1.AuthorsService])
