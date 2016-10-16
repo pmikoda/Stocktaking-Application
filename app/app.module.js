@@ -15,6 +15,7 @@ var index_2 = require("./Components/recipes/index");
 var index_3 = require("./Components/recipes/recipe-list/index");
 var index_4 = require("./Components/recipes/recipe-detail/index");
 var index_5 = require("./Components/shopping-list/index");
+var index_6 = require("./Directives/index");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -22,7 +23,8 @@ var AppModule = (function () {
         core_1.NgModule({
             imports: [platform_browser_1.BrowserModule],
             declarations: [index_1.RecipeBookAppComponent, index_1.HeaderComponent, index_2.RecipesComponent, index_3.RecipeItemComponent,
-                index_3.RecipeListComponent, index_5.ShoppingListComponent, index_5.ShoppingListAddComponent, index_4.RecipeDetail],
+                index_3.RecipeListComponent, index_5.ShoppingListComponent, index_5.ShoppingListAddComponent, index_4.RecipeDetail,
+                index_6.DropdownDirective],
             bootstrap: [index_1.RecipeBookAppComponent]
         }), 
         __metadata('design:paramtypes', [])

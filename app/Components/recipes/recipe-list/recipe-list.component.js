@@ -12,9 +12,11 @@ var core_1 = require('@angular/core');
 var recipe_1 = require("../recipe");
 var RecipeListComponent = (function () {
     function RecipeListComponent() {
-        this.recipes = [];
+        this.recipes = [
+            new recipe_1.Recipe('Jednostka centralna', 'X17363723', 'app/Images/PC.jpg', []),
+            new recipe_1.Recipe('Oscyloskop', 'AX1221332', 'app/Images/oscyloskop.jpg', [])
+        ];
         this.recipeSelected = new core_1.EventEmitter();
-        this.recipe = new recipe_1.Recipe('Dummy', 'Dummy', 'app/Images/PC.jpg');
     }
     RecipeListComponent.prototype.ngOnInit = function () {
     };
