@@ -1,13 +1,16 @@
 import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { AppComponent }   from './Components/index';
-import { HeaderComponent } from "./Components/index";
-
+import { RecipeBookAppComponent, HeaderComponent }  from './Components/index';
+import { RecipesComponent } from "./Components/recipes/index";
+import { RecipeItemComponent, RecipeListComponent } from "./Components/recipes/recipe-list/index";
+import { RecipeDetail } from "./Components/recipes/recipe-detail/index";
+import { ShoppingListComponent, ShoppingListAddComponent } from "./Components/shopping-list/index";
 
 @NgModule({
   imports:      [ BrowserModule ],
-  declarations: [ AppComponent, HeaderComponent ],
-  bootstrap:    [ AppComponent ]
+  declarations: [ RecipeBookAppComponent, HeaderComponent, RecipesComponent, RecipeItemComponent,
+                  RecipeListComponent, ShoppingListComponent, ShoppingListAddComponent, RecipeDetail ],
+  bootstrap:    [ RecipeBookAppComponent ]
 })
 
 export class AppModule { }

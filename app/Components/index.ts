@@ -1,2 +1,2 @@
-export { AppComponent } from './app.component';
+export { RecipeBookAppComponent } from './recipe-book.component';
 export { HeaderComponent } from './header.component';

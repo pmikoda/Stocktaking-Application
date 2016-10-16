@@ -9,18 +9,20 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var AppComponent = (function () {
-    function AppComponent() {
+var ShoppingListAddComponent = (function () {
+    function ShoppingListAddComponent() {
     }
-    AppComponent = __decorate([
+    ShoppingListAddComponent.prototype.ngOnInit = function () {
+    };
+    ShoppingListAddComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
-            selector: 'my-app',
-            template: "<sa-header></sa-header>"
+            selector: 'sa-shopping-list-add',
+            templateUrl: 'shopping-list-add.component.html'
         }), 
         __metadata('design:paramtypes', [])
-    ], AppComponent);
-    return AppComponent;
+    ], ShoppingListAddComponent);
+    return ShoppingListAddComponent;
 }());
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+exports.ShoppingListAddComponent = ShoppingListAddComponent;
+//# sourceMappingURL=shopping-list-add.component.js.map
