@@ -9,16 +9,15 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var recipe_1 = require("../recipe");
+var index_1 = require("../index");
 var RecipeListComponent = (function () {
-    function RecipeListComponent() {
-        this.recipes = [
-            new recipe_1.Recipe('Jednostka centralna', 'X17363723', 'app/Images/PC.jpg', []),
-            new recipe_1.Recipe('Oscyloskop', 'AX1221332', 'app/Images/oscyloskop.jpg', [])
-        ];
+    function RecipeListComponent(recipeService) {
+        this.recipeService = recipeService;
+        this.recipes = [];
         this.recipeSelected = new core_1.EventEmitter();
     }
     RecipeListComponent.prototype.ngOnInit = function () {
+        this.recipes = this.recipeService.getRecipes();
     };
     RecipeListComponent.prototype.onSelected = function (recipe) {
         this.recipeSelected.emit(recipe);
@@ -33,7 +32,7 @@ var RecipeListComponent = (function () {
             selector: 'sa-recipe-list',
             templateUrl: 'recipe-list.component.html',
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [index_1.RecipeService])
     ], RecipeListComponent);
     return RecipeListComponent;
 }());

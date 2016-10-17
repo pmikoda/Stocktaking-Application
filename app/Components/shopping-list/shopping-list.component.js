@@ -9,19 +9,23 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var shopping_list_service_1 = require("./shopping-list.service");
 var ShoppingListComponent = (function () {
-    function ShoppingListComponent() {
+    function ShoppingListComponent(sls) {
+        this.sls = sls;
         this.items = [];
     }
     ShoppingListComponent.prototype.ngOnInit = function () {
+        this.items = this.sls.getItems();
     };
     ShoppingListComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
             selector: 'sa-shopping-list',
-            templateUrl: 'shopping-list.component.html'
+            templateUrl: 'shopping-list.component.html',
+            providers: [shopping_list_service_1.ShoppingListService]
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [shopping_list_service_1.ShoppingListService])
     ], ShoppingListComponent);
     return ShoppingListComponent;
 }());

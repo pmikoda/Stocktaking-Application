@@ -1,1 +1,1 @@
-{"version":3,"file":"ingredients.js","sourceRoot":"","sources":["ingredients.ts"],"names":[],"mappings":";AAAA;IACI,oBAAmB,IAAW,EAAS,MAAc;QAAlC,SAAI,GAAJ,IAAI,CAAO;QAAS,WAAM,GAAN,MAAM,CAAQ;IAAG,CAAC;IAC7D,iBAAC;AAAD,CAAC,AAFD,IAEC;AAFY,kBAAU,aAEtB,CAAA"}
+{"version":3,"file":"ingredients.js","sourceRoot":"","sources":["ingredients.ts"],"names":[],"mappings":";AAAA;IACI,oBAAmB,IAAY,EAAS,MAAc;QAAnC,SAAI,GAAJ,IAAI,CAAQ;QAAS,WAAM,GAAN,MAAM,CAAQ;IAAG,CAAC;IAC9D,iBAAC;AAAD,CAAC,AAFD,IAEC;AAFY,kBAAU,aAEtB,CAAA"}

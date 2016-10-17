@@ -9,20 +9,26 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var index_1 = require("./recipes/index");
-var RecipeBookAppComponent = (function () {
-    function RecipeBookAppComponent() {
+var recipe_1 = require("./recipe");
+var index_1 = require("../shared/index");
+var RecipeService = (function () {
+    function RecipeService() {
+        this.recipes = [
+            new recipe_1.Recipe('Jednostka centralna', 'X17363723', 'app/Images/PC.jpg', [
+                new index_1.Ingredient('French Fries', 2),
+                new index_1.Ingredient('Pork Meat', 1)
+            ]),
+            new recipe_1.Recipe('Oscyloskop', 'AX1221332', 'app/Images/oscyloskop.jpg', [])
+        ];
     }
-    RecipeBookAppComponent = __decorate([
-        core_1.Component({
-            moduleId: module.id,
-            selector: 'sa-recipe-book-app',
-            templateUrl: 'recipe-book.component.html',
-            providers: [index_1.RecipeService]
-        }), 
+    RecipeService.prototype.getRecipes = function () {
+        return this.recipes;
+    };
+    RecipeService = __decorate([
+        core_1.Injectable(), 
         __metadata('design:paramtypes', [])
-    ], RecipeBookAppComponent);
-    return RecipeBookAppComponent;
+    ], RecipeService);
+    return RecipeService;
 }());
-exports.RecipeBookAppComponent = RecipeBookAppComponent;
-//# sourceMappingURL=recipe-book.component.js.map
+exports.RecipeService = RecipeService;
+//# sourceMappingURL=recipe.service.js.map

@@ -10,10 +10,15 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var recipe_1 = require("../recipe");
+var shopping_list_service_1 = require("../../shopping-list/shopping-list.service");
 var RecipeDetail = (function () {
-    function RecipeDetail() {
+    function RecipeDetail(sls) {
+        this.sls = sls;
     }
     RecipeDetail.prototype.ngOnInit = function () {
+    };
+    RecipeDetail.prototype.onAddToShoppingList = function () {
+        this.sls.addItems((this.selectedRecipe.ingredients));
     };
     __decorate([
         core_1.Input(), 
@@ -23,9 +28,10 @@ var RecipeDetail = (function () {
         core_1.Component({
             moduleId: module.id,
             selector: 'sa-recipe-detail',
-            templateUrl: 'recipe-detail.component.html'
+            templateUrl: 'recipe-detail.component.html',
+            providers: [shopping_list_service_1.ShoppingListService]
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [shopping_list_service_1.ShoppingListService])
     ], RecipeDetail);
     return RecipeDetail;
 }());
