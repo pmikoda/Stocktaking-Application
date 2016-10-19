@@ -11,14 +11,23 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var recipe_1 = require("../recipe");
 var shopping_list_service_1 = require("../../shopping-list/shopping-list.service");
+var router_1 = require("@angular/router");
 var RecipeDetail = (function () {
-    function RecipeDetail(sls) {
+    function RecipeDetail(sls, router) {
         this.sls = sls;
+        this.router = router;
+        this.recipeIndex = 1;
     }
     RecipeDetail.prototype.ngOnInit = function () {
     };
+    RecipeDetail.prototype.onEdit = function () {
+        this.router.navigate(['/recipes', this.recipeIndex, 'edit']);
+    };
+    RecipeDetail.prototype.onDelete = function () {
+        this.router.navigate(['/recipes']);
+    };
     RecipeDetail.prototype.onAddToShoppingList = function () {
-        this.sls.addItems((this.selectedRecipe.ingredients));
+        this.sls.addItems(this.selectedRecipe.ingredients);
     };
     __decorate([
         core_1.Input(), 
@@ -29,9 +38,8 @@ var RecipeDetail = (function () {
             moduleId: module.id,
             selector: 'sa-recipe-detail',
             templateUrl: 'recipe-detail.component.html',
-            providers: [shopping_list_service_1.ShoppingListService]
         }), 
-        __metadata('design:paramtypes', [shopping_list_service_1.ShoppingListService])
+        __metadata('design:paramtypes', [shopping_list_service_1.ShoppingListService, router_1.Router])
     ], RecipeDetail);
     return RecipeDetail;
 }());

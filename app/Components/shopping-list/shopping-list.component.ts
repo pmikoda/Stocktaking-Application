@@ -7,7 +7,6 @@ import { ShoppingListService } from "./shopping-list.service";
     moduleId: module.id,
     selector: 'sa-shopping-list',
     templateUrl: 'shopping-list.component.html',
-    providers: [ ShoppingListService ]
 })
 
 export class ShoppingListComponent implements OnInit{

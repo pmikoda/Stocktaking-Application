@@ -9,7 +9,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var index_1 = require("./recipes/index");
 var RecipeBookAppComponent = (function () {
     function RecipeBookAppComponent() {
     }
@@ -17,8 +16,7 @@ var RecipeBookAppComponent = (function () {
         core_1.Component({
             moduleId: module.id,
             selector: 'sa-recipe-book-app',
-            templateUrl: 'recipe-book.component.html',
-            providers: [index_1.RecipeService]
+            templateUrl: 'recipe-book.component.html'
         }), 
         __metadata('design:paramtypes', [])
     ], RecipeBookAppComponent);

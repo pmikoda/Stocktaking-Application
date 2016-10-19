@@ -23,7 +23,6 @@ var ShoppingListComponent = (function () {
             moduleId: module.id,
             selector: 'sa-shopping-list',
             templateUrl: 'shopping-list.component.html',
-            providers: [shopping_list_service_1.ShoppingListService]
         }), 
         __metadata('design:paramtypes', [shopping_list_service_1.ShoppingListService])
     ], ShoppingListComponent);

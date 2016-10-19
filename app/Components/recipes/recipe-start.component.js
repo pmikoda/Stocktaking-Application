@@ -9,18 +9,19 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var RecipesComponent = (function () {
-    function RecipesComponent() {
+var RecipeStartComponent = (function () {
+    function RecipeStartComponent() {
     }
-    RecipesComponent = __decorate([
+    RecipeStartComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
-            selector: 'sa-recipes',
-            templateUrl: 'recipes.component.html'
+            selector: 'sa-recipe-start',
+            template: "\n    <h1>Please select a Recipe</h1>\n  ",
+            styles: []
         }), 
         __metadata('design:paramtypes', [])
-    ], RecipesComponent);
-    return RecipesComponent;
+    ], RecipeStartComponent);
+    return RecipeStartComponent;
 }());
-exports.RecipesComponent = RecipesComponent;
-//# sourceMappingURL=recipes.component.js.map
+exports.RecipeStartComponent = RecipeStartComponent;
+//# sourceMappingURL=recipe-start.component.js.map
